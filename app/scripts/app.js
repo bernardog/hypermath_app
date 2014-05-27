@@ -2,7 +2,8 @@
 
 angular
   .module('hypermathApp', [
-    'ngRoute'
+    'ngRoute',
+    'ngResource'
   ])
   .config(function ($routeProvider) {
     $routeProvider
