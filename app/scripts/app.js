@@ -1,14 +1,14 @@
 'use strict';
 
 angular
-  .module('hypermathAppApp', [
+  .module('hypermathApp', [
     'ngRoute'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'CalculatorController'
       })
       .otherwise({
         redirectTo: '/'
