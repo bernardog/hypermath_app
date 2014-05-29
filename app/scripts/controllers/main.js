@@ -25,6 +25,14 @@ angular.module('hypermathApp')
       console.log('OPERAÇÃO: ' + $scope.operation);
     };
 
+    $scope.reset = function () {
+      $scope.result    = null;
+      $scope.x         = null;
+      $scope.y         = null;
+      $scope.operation = null;
+      next             = false;
+    };
+
     $scope.getResult = function () {
       var data = {operation: {x: $scope.x, y: $scope.y}};
       switch ($scope.operation) {
@@ -47,7 +55,7 @@ angular.module('hypermathApp')
           });
         break;
       case '+':
-        $http.post('http://hypermath-api.herokuapp.com/operations/add', data)
+        $http.post('http://hypermath-api.herokuapp.com/operations/addition', data)
           .success(function (data) {
             $scope.result = data.result;
           });
@@ -55,10 +63,7 @@ angular.module('hypermathApp')
       default:
 
       }
-      $scope.operation = null;
-      $scope.x         = null;
-      $scope.y         = null;
-      next             = false;
+      $scope.reset();
     };
 
   });

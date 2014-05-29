@@ -53,15 +53,15 @@
     <a ng-click="setOperation('-')" class="expand button large">-</a>
   </li>
   <li>
-    <a class="expand secondary button large">0</a>
+    <a ng-click="setValue(0)" class="expand secondary button large">0</a>
   </li>
   <li>
-    <a class="expand secondary button large">C</a>
+    <a ng-click="reset()" class="expand alert button large">C</a>
   </li>
   <li>
-    <a class="expand secondary button large">CE</a>
+    <a ng-click="getResult()" class="expand success button large">=</a>
   </li>
   <li>
-    <a ng-click="getResult()" class="expand button large">=</a>
+    <a ng-click="setOperation('+')" class="expand button large">+</a>
   </li>
 </ul>
