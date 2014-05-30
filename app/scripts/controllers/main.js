@@ -1,12 +1,20 @@
 'use strict';
 
-angular.module('hypermathApp')
+angular
+  .module('hypermathApp', ['ngRoute', 'angular-loading-bar', 'ngAnimate'])
+  .config(function ($routeProvider) {
+    $routeProvider
+    .otherwise({
+      templateUrl: 'views/main.html',
+      controller: 'CalculatorController'
+    });
+  })
   .controller('CalculatorController', function ($scope, $http) {
 
-    $scope.result = null;
-    $scope.x= null;
-    $scope.y = null;
-    var next = false;
+    $scope.result  = null;
+    $scope.x       = null;
+    $scope.y       = null;
+    var next       = false;
 
     $scope.setValue = function (value) {
       $scope.result = null;
